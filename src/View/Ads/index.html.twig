@@ -1,0 +1,83 @@
+{% extends "layout.html.twig" %}
+
+{% block title %}Parcourir les annonces{% endblock %}
+
+{% block content %}
+    <div class="container-fluid vr-bg">
+        <div class="container">
+            <div class="vr-ads">
+                <h1 class="vr-h1 col col-sm col-md col-lg col-xl">Parcourir les annonces</h1>
+                <div class="vr-Add-Button-container col col-sm col-md col-lg col-xl">
+                    <a class="vr-Add-Button btn btn-primary btn-lg" href="/ads/add">
+                        <i style="vertical-align: middle;" class="fas fa-plus-square"></i>
+                        Poster une nouvelle annonce</a>
+                </div>
+                <div class="col col-sm col-md col-lg col-xl">
+                    <form method="post">
+                        <div class="row vr-ads-filter">
+                            <div class="col vr-filter">
+                                <label for="category_name">Catégorie</label><br>
+                                <input type="text" list="category_name" name="category_name"
+                                       placeholder="Toutes les catégories" class="form-control as_thead"
+                                       value="{{ searchFilters.category_name }}"/>
+                                <datalist id="category_name">
+                                    {% for categorie in categories %}#}
+                                        <option value="{{ categorie.name }}">{{ categorie.name }}</option>
+                                    {% endfor %}
+                                </datalist>
+                            </div>
+                            <div class="col vr-filter">
+                                <label for="postcode">Département</label><br>
+                                <input type="text" list="postcode" name="postcode"
+                                       placeholder="Tous les départements"
+                                       class="form-control as_thead" value="{{ searchFilters.postcode }}"/>
+                                <datalist id="postcode">
+                                    {% for postcode in postcodes %}
+                                        <option value="{{ postcode.postcode }}">{{ postcode.postcode }}</option>
+                                    {% endfor %}
+                                </datalist>
+                            </div>
+
+                            <div class="col vr-filter">
+                                <div class="vr-input">
+                                    <input type="submit" class="btn btn-outline-success vr-navbar-search-button"
+                                           value="Appliquer filtres">
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="table-responsive">
+
+                    <table class="vr-tables">
+                        <thead>
+                        <tr>
+                            <th scope="col">Consulter</th>
+                            <th scope="col">Titre</th>
+                            <th scope="col">Description</th>
+                            <th scope="col">date</th>
+                            <th scope="col">Catégorie</th>
+                            <th scope="col">Département</th>
+                            <th scope="col">Annonceur</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        {% for ads in allAds %}
+                            <tr>
+                                <td><a class="vr-icon-search" href="/ads/show/{{ ads.id }}">
+                                        <i class="fas fa-search"></i></a></td>
+                                <td scope="row"> {{ ads.title }}</td>
+                                <td scope="row"> {{ ads.description[:50] }}...</td>
+                                <td scope="row"> {{ ads.date }}</td>
+                                <td scope="row"> {{ ads.category_name }}</td>
+                                <td scope="row"> {{ ads.postcode }}</td>
+                                <td scope="row"> {{ ads.firstname }} {{ ads.lastname }}</td>
+                            </tr>
+                        {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

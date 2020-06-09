@@ -1,0 +1,103 @@
+@import url('https://fonts.googleapis.com/css2?family=Baloo+Bhaina+2&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Sacramento&display=swap');
+@import 'virgile.css';
+@import 'max.css';
+@import 'users.css';
+@import 'samir.css';
+/*##################### début Général #############################*/
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    --NavBar : rgb(60, 146, 232);
+    display: table;
+    width: 100%;
+}
+
+footer {
+    display: table-row;
+    height: 0;
+    text-shadow: 1px 1px 1px black;
+}
+
+a, a:hover {
+    text-decoration: none;
+}
+
+input:invalid {
+    border: 0px solid #bf5454;
+}
+
+.navbar,
+.navbar .dropdown-menu,
+.footer_body .dropdown-menu,
+.footer_body,
+.footer_item,
+.footer_body h5 {
+    background: var(--NavBar)!important;
+    color: white!important;
+}
+
+
+.footer_foot, .footer_head {
+    background-color: rgba(0, 105, 92, 0.78) !important;
+    color: white !important;
+}
+
+.navbar-brand{
+    font-size: 30px!important;
+}
+
+.navbar li active {
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+.navbar a, .footer_body a {
+    color: white!important;
+    font-size: 16px;
+    text-shadow: 1px 1px 1px black;
+    transition: all 0.1s;
+    text-transform: uppercase;
+}
+
+.navbar a:hover, .footer_body a:hover{
+    font-size: 20px;
+    transition: all 0.1s;
+    cursor: pointer;
+}
+
+a, h1, label, input, textarea, table, .mk2-h2, h2, h3, h4, h5 {
+    font-family: 'Baloo Bhaina 2', cursive;
+}
+
+.dropdown-menu .dropdown-item:hover {
+    color: white!important;
+}
+
+
+.footer_head,
+.footer_item,
+.footer_foot {
+    padding: 0;
+    border: 0px;
+}
+
+.footer_body {
+    padding: 7px 0 0 0;
+    border: 0px;
+}
+
+.footer_row {
+    margin-right: 0;
+    margin-left: 0;
+    border: 0px;
+}
+

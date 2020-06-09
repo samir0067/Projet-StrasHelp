@@ -1,0 +1,162 @@
+/*##################### debut Maxime Kaiser #######################*/
+#lastAds {
+    text-align: center;
+}
+
+.mk-h2 {
+    text-align: center;
+}
+
+.mk-card {
+    text-align: center;
+    border-radius: 16px;
+}
+
+.mk-carousel-container {
+    padding: 20px;
+    background-color: rgba(100, 180, 255, 1);
+    border-radius: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 20px;
+}
+
+.mk-carousel-text {
+    color: white;
+    text-shadow: 1px 1px 1px black;
+    width: 86%;
+    height: auto;
+
+}
+
+.mk-card img {
+    opacity: 100%;
+    max-height: 210px;
+    min-height: 210px;
+}
+
+
+.mk-rating {
+    width: 300px;
+    margin: 0 auto 1em;
+    font-size: 45px;
+    overflow: hidden;
+}
+
+.mk-rating a {
+    float: right;
+    color: #aaa;
+    text-decoration: none;
+    -webkit-transition: color .4s;
+    -moz-transition: color .4s;
+    -o-transition: color .4s;
+    transition: color .4s;
+}
+
+.mk-rating a:hover,
+.mk-rating a:hover ~ a,
+.mk-rating a:focus {
+    color: orange;
+    color: #ff7a00;
+    cursor: pointer;
+}
+
+.mk-rating2 {
+    direction: rtl;
+}
+
+.mk-rating2 a {
+    float: none;
+}
+
+.card-title, .cart-text {
+    color: #00796B !important;
+}
+
+.mk-rounded-circle {
+    border: 3px solid #ff7a00;
+    width: 45%;
+}
+
+.mk-bloc-text-postAds {
+    background-color: rgba(0, 0, 0, 0);
+}
+
+.mk-text-postAds {
+    font-size: 2rem;
+}
+
+.mk-postAds-btn {
+    margin: 6px;
+    padding: 6px;
+    background-color: #004D40;
+    border: 2px solid #E0F2F1 !important;
+    transition: .25s all;
+}
+
+.mk-postAds-btn:hover {
+    background-color: #096655;
+    border: 2px solid #E0F2F1 !important;
+    transition: .25s all;
+}
+
+.mk-messageAd-btn {
+    display: flex;
+    justify-content: center;
+    background-color: #004D40;
+    border: 2px solid #E0F2F1 !important;
+    transition: .25s all;
+}
+
+.mk-messageAd-btn:hover {
+    background-color: #096655;
+    border: 2px solid #E0F2F1 !important;
+    transition: .25s all;
+}
+
+.mk-editMessage {
+    margin: 10%;
+}
+
+.mk-edit2Message {
+    margin: 5%;
+}
+.mk-asso-picture {
+    display: flex;
+}
+
+.mk-jumbo {
+    margin-top: 5%;
+    border-radius: 16px;
+    background: linear-gradient(to right, rgba(172, 204, 217, 0.55), rgba(238, 240, 245, 1));
+    box-shadow: -3px 0 2px rgb(78, 82, 82);
+}
+
+.mk-btn {
+    border: 2px solid #C0C0C0;
+    color: initial;
+    border-radius: 16px;
+}
+
+#temoignages, #association{
+    padding:20px;
+}
+
+.aProposContainer {
+    margin-top: 25px;
+    text-align: center;
+}
+
+.mk-text {
+    margin-top: 50px;
+}
+.mk-text h2 {
+    margin-bottom: 30px;
+}
+
+@media screen and (max-width: 768px ) {
+    .mk-card img {
+
+    }
+}

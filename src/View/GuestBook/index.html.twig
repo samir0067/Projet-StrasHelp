@@ -1,0 +1,29 @@
+{% extends 'layout.html.twig' %}
+{% block title %}Accueil{% endblock %}
+
+{% block content %}
+    <div class="container-fluid vr-bg vr-guestbook">
+        <div class="container" id="livre d'or">
+            <div class="form-group">
+                <a href="add" class="btn btn-primary mk-postAds-btn" role="button" aria-pressed="true">
+                    Ajouter un message</a>
+            </div>
+            <h2 class="vr-h1-guestbook">Livre d'or</h2>
+            <div class="container">
+                {% for mess in allGuestBook %}
+                    <p class="lead"><h2 class="vr-h2-guestbook">{{ mess.firstname }} {{ mess.lastname }}</h2></p>
+                    <p class="lead vr-quotes"> « {{ mess.message }} »</p>
+                    <a class="btn btn-outline-success my-2 my-sm-0 vr-navbar-search-button" href="show/{{ mess.id }}">voir
+                        le message</a>
+
+                    <hr class="my-4">
+                {% endfor %}
+                <div class="form-group">
+                    <a href="add" class="btn btn-primary mk-postAds-btn" role="button" aria-pressed="true">
+                        Ajouter un message</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

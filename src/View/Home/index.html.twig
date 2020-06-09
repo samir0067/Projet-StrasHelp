@@ -1,0 +1,110 @@
+{% extends 'layout.html.twig' %}
+{% block title %}Accueil{% endblock %}
+
+{% block content %}
+    <section id="postAds">
+        <section>
+            <h2>Postez des annonces avec<br><strong>Stras'Help</strong></h2>
+            <div id="main-image"><img src="/assets/images/association.png"></div>
+            <h3>Le premier site d'échange de services gratuit.</h3>
+            <div id="main-image">
+                <a href="/ads/add" class="btn btn-outline-success my-2 my-sm-0 vr-navbar-search-button">
+                    Publier une annonce</a>
+            </div>
+        </section>
+    </section>
+
+
+    <section id="lastAds" class="adsdb">
+        <h2 class="mk-h2">Dernières Annonces</h2>
+        <div class="container">
+            <div class="card-deck">
+                {% for ad in last3Ads %}
+                    <a href="/ads/show/{{ ad.id }}" class="card mk-card">
+                        <img src="../assets/images/categories/{{ ad.image }}" class="card-img-top mk-card-img">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ ad.title }}</h5>
+                            <p class="card-text">{{ ad.description[:150] }}...</p>
+                            <p class="card-text"><small class="text-muted">{{ ad.date }}</small></p>
+                        </div>
+                    </a>
+                {% else %}
+                    <li>Nothing to display</li>
+                {% endfor %}
+            </div>
+            <div class="vr-Add-Button-container">
+                <a href="/Ads/index" class="btn btn-outline-success my-2 my-sm-0 vr-navbar-search-button"
+                   role="button" aria-pressed="true">Consulter les {{ ads|length }} annonces</a>
+            </div>
+        </div>
+
+    </section>
+
+
+    <section id="temoignages">
+        <h2 class="mk-h2">Témoignages</h2>
+        <div class="container">
+            <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+                <ol class="carousel-indicators mk-card">
+                    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                    <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
+                    <li data-target="#carouselExampleIndicators" data-slide-to="4"></li>
+                </ol>
+                <div class="carousel-inner mk-card">
+                    {% for messages in last5Messages %}
+                    {% if messages.id == 1 %}
+                    <div class="carousel-item active">
+                        {% else %}
+                        <div class="carousel-item ">
+                            {% endif %}
+                            <div class="mk-carousel-container">
+                                <div class="mk-carousel-text">
+                                    <h5 class="">{{ messages.firstname }} {{ messages.lastname }}</h5>
+                                    <p class="">{{ messages.content }}</p>
+                                </div>
+                            </div>
+                        </div>
+                        {% endfor %}
+
+                    </div>
+                    <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Next</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="association" class="aadsdb">
+        <h2 class="mk-h2">L'Association</h2>
+        <div class="container mk-asso-picture">
+            <div class="text-center">
+                <img src="../assets/images/users/GS.jpg" alt="..." class="rounded-circle mk-rounded-circle">
+            </div>
+            <div class="text-center">
+                <img src="../assets/images/users/Adminyk.jpg" alt="..." class="rounded-circle mk-rounded-circle">
+            </div>
+            <div class="text-center">
+                <img src="../assets/images/users/pika.jpg" alt="..." class="rounded-circle mk-rounded-circle">
+            </div>
+        </div>
+
+        <div class=" container aProposContainer">
+            <p>
+            C'est en 2004 que l'association Stras'Help voit le jour après que son fondateur et président actuel, Yavuz
+                KUTUK, proposa son aide pour bêcher le jardin de son voisin Gilles SAMUEL. En échange de ce service
+                rendu, Gilles proposa à son tour de garder les enfants de Yavuz quand ce dernier le voudra. Constatant
+                l'avantage que procure cette entre-aide, les 2 hommes décidèrent de fonder l'association Stras'Help et
+                de la déployer sur l'ensemble du département.
+            </p>
+        <br/>
+        </div>
+    </section>
+{% endblock %}

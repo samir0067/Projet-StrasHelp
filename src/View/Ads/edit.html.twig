@@ -1,0 +1,10 @@
+{% extends 'layout.html.twig' %}
+{% block title %}Editer une annonce{% endblock %}
+{% block content %}
+    <div class="container">
+        <a href="/ads/show/{{ adInfo.id }}" class="btn btn-outline-success vr-navbar-search-button">Retour</a>
+        <h1>Editer "{{ adInfo.title }}"</h1>
+        {% include 'Ads/_form.html.twig' %}
+        <a href="/ads/show/{{ adInfo.id }}" class="btn btn-outline-success vr-navbar-search-button">Retour</a>
+    </div>
+{% endblock %}

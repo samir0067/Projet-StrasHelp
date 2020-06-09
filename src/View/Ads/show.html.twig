@@ -1,0 +1,48 @@
+{% extends 'layout.html.twig' %}
+
+{% block content %}
+    <div class="container-fluid vr-bg">
+        <div class="container vr-ads-post">
+            <div class="vr-rows ">
+                <h1 class="vr-h1 col col-sm col-md col-lg col-xl">{{ adInfo.title }}</h1>
+                <p class="vr-catname">Catégorie : {{ adInfo.category_name }} dans le {{ adInfo.postcode }}</p>
+                <hr>
+                <div class="row">
+                    <div class="vr-images-container col-2">
+                        <img class="vr-images" src="/assets/images/users/{{ adInfo.image }}">
+                        <a href="/users/show/{{ adInfo.user_id }}" class="btn btn-primary vr-button">Voir le profil</a>
+                    </div>
+                    <div class="vr-ads-post col-10">
+                        <p class="vr-name">{{ adInfo.firstname }} {{ adInfo.lastname }}</p>
+                        <p class="vr-description">{{ adInfo.description }}</p>
+
+                        <a class="vr-Add-Button btn btn-primary btn-lg" href="mailto:{{ adInfo.email }}">
+                            <i class="fas fa-envelope"></i> Email : {{ adInfo.email }}</a>
+
+                        {% if adInfo.phone is not empty %}
+                            <a class="vr-Add-Button btn btn-primary btn-lg" href="tel:+33{{ adInfo.phone }}">
+                                <i class="fas fa-phone-volume"></i> Téléphone : 0{{ adInfo.phone }}</a>
+                        {% endif %}
+
+                    </div>
+                </div>
+                <div class="row">
+                    {% if session is not empty or session.admin == 1 %}
+                        {% if adInfo.user_id == session.id %}
+
+                            <div class="vr-ads-post col-12"><a class="vr-icon-edit" href="/ads/edit/{{ adInfo.id }}"><i
+                                            class="fas fa-edit"></i>Editer</a>
+                                <a class="vr-icon-archive" href="/ads/delete/{{ adInfo.id }}"><i
+                                            class="fas fa-archive"></i>Archiver</a>
+                                <a class="btn btn-outline-success vr-navbar-search-button" href="/ads/index">Back</a>
+                            </div>
+                        {% endif %}
+                    {% endif %}
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+{% endblock %}

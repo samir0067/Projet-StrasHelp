@@ -1,0 +1,135 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-dark">
+    <a class="navbar-brand" href="/Home/index" id="Home">Stras'Help</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+        <ul class="navbar-nav mr-auto mdb">
+            <li class="nav-item active">
+                <a class="nav-link" href="/users/index">Communauté<span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="/Ads/index">Parcourir les offres <span
+                            class="sr-only">(current)</span></a>
+            </li>
+            {% if session.admin == 1 %}
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown"
+                       aria-haspopup="true" aria-expanded="false">Panneau d'administration</a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="/admin/index">Utilisateur <span class="sr-only">(current)</span></a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="/archive/index">Archive <span
+                                    class="sr-only">(current)</span></a>
+                    </div>
+                </li>
+            {% endif %}
+        </ul>
+
+        <div class="col-md-4 ml-auto mr-auto brdb">
+            <form class="form-inline my-2 my-lg-0 fffdb" method="post" action="/Home/search">
+                <input class="form-control mr-sm-2" type="search"
+                       name="query" placeholder="Search" aria-label="Search"
+                       list="query"/>
+                <datalist id="query">
+                    {% for postcode in postcodes %}
+                        <option value="{{ postcode.postcode }}"></option>
+                    {% endfor %}
+
+                    {% for user in users %}
+
+                        <option value="{{ user.firstname }} {{ user.lastname }}"></option>
+
+                    {% endfor %}
+                </datalist>
+                <button class="btn btn-outline-success my-2 my-sm-0 vr-navbar-search-button" type="submit">
+                    <i class="fas fa-search"></i> Search
+                </button>
+            </form>
+        </div>
+        <div class="navdb">
+            {% if session %}
+                <a href="" class="nav-link" data-toggle="modal" data-target="#staticBackdrop"><i
+                            class="far fa-user-circle"></i> {{ session.firstname }} {{ session.lastname }}</a>
+                <div class="modal fade" id="staticBackdrop" data-backdrop="static" tabindex="-1" role="dialog"
+                     aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title mtdb" id="staticBackdropLabel">{{ session.firstname }}</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body amdb">
+                                <a class="amdbb" href="/users/show/{{ session.id }}"> Mon Profil</a><br>
+                                <a class="amdbb" href="/ads/add"> Publier une annonce</a>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
+                                <a href="/deconnect.php" type="button" class="btn btn-danger">Se Deconnecter</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            {% else %}
+                <div class="d-flex bd-highlight mb-3 rob">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item active"><a class="nav-link" href="/users/add">
+                                <i class="far fa-user"></i> Sign up</a>
+                        </li>
+                        <li class="nav-item active"><a class="nav-link"
+                                                       href="/users/sign" {#"data-toggle="modal" data-target="#staticBackdrop"#}>
+                                <i class="fas fa-user-circle"></i> Sign In</a>
+                        </li>
+                        <div class="modal fade" id="staticBackdrop" data-backdrop="static" tabindex="-1" role="dialog"
+                             aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="staticBackdropLabel">Modal title</h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <form class="needs-validation" method="POST" action="">
+                                            <h1 class="h1db">SE CONNECTER</h1>
+                                            <div class="form-row fdb">
+                                                <div class="col-md-7 mb-4">
+                                                    <label for="email">Email</label>
+                                                    <input type="email" class="form-control" name="emailLog"
+                                                           placeholder="Votre Email" required>
+                                                    <div class="valid-feedback">Ok !</div>
+                                                    <div class="invalid-feedback">Valeur incorrecte</div>
+                                                </div>
+                                            </div>
+                                            <div class="form-row fdb">
+                                                <div class="col-md-7 mb-4">
+                                                    <label for="password">Mot de Passe</label>
+                                                    <input type="password" class="form-control" name="passwordLog"
+                                                           placeholder="Votre mot de passe"
+                                                           required>
+                                                    <div class="valid-feedback">Ok !</div>
+                                                    <div class="invalid-feedback">Valeur incorrecte</div>
+                                                </div>
+                                            </div>
+                                            <div class="maximaxi">
+                                                <button class="btn btn-outline-success my-2 my-sm-0 vr-navbar-search-button"
+                                                        type="submit" value="Je me connecte !">Je me connecte !
+                                                </button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </ul>
+                </div>
+            {% endif %}
+        </div>
+    </div>
+</nav>

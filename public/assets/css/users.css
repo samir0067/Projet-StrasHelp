@@ -1,0 +1,93 @@
+/*##################### debut David Braz ##########################*/
+
+.cdb {
+    /*background-color: rgba(220,220,220,1);*/
+    background: linear-gradient(rgb(180, 180, 180), white);
+    padding:40px;
+    font-weight: bold;
+}
+
+.cdb input:invalid {
+    border: 0px;
+}
+
+
+
+.fdb {
+    justify-content: center;
+}
+
+.h1db {
+    font-weight: bolder;
+    color: rgba(70,70,70,1);
+    text-align: center;
+    font-family: 'Baloo Bhaina 2', cursive;
+    font-size: 2rem;
+    margin: 0px;
+    padding: 0px;
+
+}
+
+.btndb {
+    text-align: center;
+    background-color: black;
+    transition: all 0.3s ease-in 0.3s;
+}
+
+.btndb:hover {
+    background-color: white;
+    color: #004D40;
+}
+
+.ffdb {
+    display: flex;
+    justify-content: center;
+}
+
+.maximaxi {
+    display: flex;
+    justify-content: center;
+}
+.amdb a{
+    color: #1b8aaa !important;
+}
+.mtdb{
+    color: black;
+}
+
+/*****************************************************/
+/* INDEX */
+#main-image img
+{
+    width: 400px;
+    height: auto;
+    margin: 0 auto;
+}
+#main-image{
+    display: flex;
+    flex-direction: column;
+    margin:20px;
+}
+
+#postAds h2, #postAds h3{
+    margin-top: 50px;
+    text-align: center;
+}
+#main-image a{
+    width: 20%;
+    margin: 0 auto;
+}
+.adsdb{
+    background: #efefef !important;
+    padding: 20px;
+}
+.aadsdb{
+    background: #efefef !important;
+    margin-bottom: -40px;
+}
+.ddd{
+    width: 90px;
+    height: 40px;
+}
+
+

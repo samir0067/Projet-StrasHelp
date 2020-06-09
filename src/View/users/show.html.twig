@@ -1,0 +1,67 @@
+{% extends 'layout.html.twig' %}
+{% block title %}{{ users.lastname }} {{ users.firstname }}{% endblock %}
+{% block content %}
+    <div class="container-fluid as_user_block_fluid">
+        <div class="jumbotron jumbotron-fluid as_user_jumbo_fluid">
+            <div class="container">
+                <h2 class="display-4"><strong class="as_strong">
+                        <i class="fas fa-user"></i> </strong> {{ users.lastname }} {{ users.firstname }}</h2>
+                <img src="/assets/images/users/{{ users.image }}" class="img-thumbnail as_img_view">
+                <h2>Mes informations </h2>
+                <p class="lead"><strong class="as_strong">Contact:</strong> {{ users.email }} +33{{ users.phone }}</p>
+                {% if session is not empty or session.admin == 1 %}
+                    {% if users.id == session.id %}
+                        <p class="lead"><strong class="as_strong">Adresse:</strong> {{ users.postcode }} {{ users.city }} {{ users.address }}</p>
+                    {% endif %}
+                {% endif %}
+                {% if rating is null %}
+                    <p class="lead"><strong class="as_strong">Note moyenne : </strong> Aucune note</p>
+                {%  else %}
+                    <p class="lead"><strong class="as_strong">Note moyenne : </strong> {{ rating }}/5 sur {{ ratingCount }} votes</p>
+                {% endif %}
+                <p class="lead"><strong class="as_strong">Evaluer le bénévole : </strong>
+                <div class="container" id="evaluation">
+                    <div class="rating as_rating mk-rating rating2 mk-rating2">
+                        <a onclick="rateUser(5);" class="ratingStar" title="Give 5 stars">★</a>
+                        <a onclick="rateUser(4);" class="ratingStar" title="Give 4 stars">★</a>
+                        <a onclick="rateUser(3);" class="ratingStar" title="Give 3 stars">★</a>
+                        <a onclick="rateUser(2);" class="ratingStar" title="Give 2 stars">★</a>
+                        <a onclick="rateUser(1);"class="ratingStar" title="Give 1 star">★</a>
+
+                    </div>
+                </div>
+                </p>
+                {% if session is not empty or session.admin == 1 %}
+                    {% if users.id == session.id %}
+                        <a href="/users/edit/{{ users.id }}" class="btn btn-outline-primary as_a_modif"><i class="fas fa-user-edit"></i> Editer</a>
+                        <a href="/users/delete/{{ users.id }}" class="btn btn-outline-danger as_a_dark"><i class="fas fa-user-slash"></i> Supprimer mon compte</a>
+                    {% endif %}
+                {% endif %}
+
+            </div>
+        </div>
+        <div class="container">
+                <div class="row as_user_row">
+                    {% for ads in allads %}
+                        <div class="card as_c_us">
+                            <div class="card-body as_cb_us">
+                                <h3><strong class="as_strong"> Annonce N°{{ ads.id }}</strong></h3>
+                                <h2 class="lead"><strong class="as_strong">Titre</strong> {{ ads.title }}</h2>
+                                <p class="lead"><strong class="as_strong">Description:</strong> {{ ads.description[:150] }}... </p>
+                                <p class="lead"><strong class="as_strong">Secteur d'activité:</strong> {{ users.city }} {{ users.postcode }}</p>
+                                <p class="card-text"><small class="text-muted">Date de création: {{ ads.date }}</small></p>
+                                <hr class="my-4">
+                                        <a class="btn btn-outline-success as_a_delete" href="/ads/show/{{ ads.id }}"><i class="fas fa-search"> </i> Consulter l'annonce  </a>
+                                {% if session is not empty or session.admin == 1 %}
+                                    {% if users.id == session.id %}
+                                        <a href="/Ads/edit/{{ ads.id }}" class="btn btn-outline-primary as_a_archive"><i class="fas fa-archive"></i> Modifier</a>
+                                        <a href="/Admin/deleteAds/{{ ads.id }}" class="btn btn-outline-danger as_a_delete"><i class="fas fa-trash"></i> Supprimer</a>
+                                    {% endif %}
+                                {% endif %}
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+{% endblock %}

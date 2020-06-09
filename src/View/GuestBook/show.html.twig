@@ -1,0 +1,21 @@
+{% extends 'layout.html.twig' %}
+{% block content %}
+    <div class="container-fluid vr-guestbook">
+        <div class="container vr-quotes-show">
+            {% for mess in allGuestBook %}
+                <p class="vr-h1-guestbook">{{ mess.firstname }} {{ mess.lastname }}</p>
+                <p class="vr-quotes">{{ mess.message }}</p>
+                {% if session is not empty or session.admin == 1 %}
+                    {% if mess.users_id == session.id %}
+                        <a href="/GuestBook/edit/{{ mess.id }}" class="btn btn-outline-primary mk-btn"><i
+                                    class="fas fa-user-edit"></i> Modifier</a>
+                        <a href="/GuestBook/delete/{{ mess.id }}" class="btn btn-outline-danger mk-btn"><i
+                                    class="fas fa-trash"></i> Supprimer</a>
+                    {% endif %}
+                {% endif %}
+                <a href="/GuestBook/index" class="btn btn-outline-dark mk-btn"><i class="fas fa-undo"></i>
+                    Retour</a>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,23 @@
+{% extends 'layout.html.twig' %}
+{% block title %}{{ users.lastname }} {{ users.firstname }}{% endblock %}
+{% block content %}
+<div class="container-fluid as_block_fluid">
+    <div class="jumbotron jumbotron-fluid as_jumbo_fluid">
+        <div class="container">
+            <h2 class="display-4"><i class="fas fa-user-edit"></i> Annonce </h2>
+            <a href="/Archive/delete/{{ archive.id }}" class="btn btn-outline-danger as_a_delete as_delete_up"><i class="fas fa-trash"></i> Supprimer</a>
+            <a href="/Archive/index/{{ archive.id }}" class="btn btn-outline-dark as_a_dark"><i class="fas fa-undo"></i> Retour</a>
+        </div>
+    </div>
+    <div class="container">
+        <div class="jumbotron as_jumbo">
+            <h2 class="display-4">N°{{ archive.id }}</h2>
+            <p class="lead"><strong class="as_strong">Titre</strong> {{ archive.title }}</p>
+            <p class="lead"><strong class="as_strong">Bref description:</strong> {{ archive.brief_desc }}</p>
+            <p class="lead"><strong class="as_strong">Description:</strong> {{ archive.description }}</p>
+            <p class="lead"><strong class="as_strong">Date de création:</strong> {{ archive.date }}</p>
+            <hr class="my-4">
+        </div>
+    </div>
+</div>
+{% endblock %}

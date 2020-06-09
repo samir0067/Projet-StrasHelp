@@ -1,0 +1,55 @@
+{% extends 'layout.html.twig' %}
+{% block title %}{{ users.lastname }} {{ users.firstname }}{% endblock %}
+{% block content %}
+<div class="container-fluid as_block_fluid">
+    <div class="jumbotron jumbotron-fluid as_jumbo_fluid">
+        <div class="container">
+            <h2 class="display-4"><i class="fas fa-user-edit"></i> Edit</h2>
+            <a href="/Admin/edit/{{ users.id }}" class="btn btn-outline-primary as_a_modif"><i class="fas fa-user-edit"></i> Editer</a>
+            <a href="/Admin/index/{{ users.id }}" class="btn btn-outline-dark as_a_dark"><i class="fas fa-undo"></i> Retour</a>
+        </div>
+    </div>
+<div class="container-fluid">
+<div class="row as_row_jumbo">
+<div class="container col-lg-6">
+    <div class="jumbotron as_jumbo">
+        <h2 class="display-4"><strong class="as_strong"> Profil </strong></h2>
+        <img src="/assets/images/users/{{ users.image }}" class="img-thumbnail as_img_view">
+        <p class="lead"><strong class="as_strong">Statut:</strong> {{ users.admin }}</p>
+        <p class="lead"><strong class="as_strong">Nom:</strong> {{ users.lastname }} {{ users.firstname }}</p>
+        <p class="lead"><strong class="as_strong">Contact:</strong> {{ users.email }} +33{{ users.phone }}</p>
+        <p class="lead"><strong class="as_strong">Adresse:</strong> {{ users.postcode }} {{ users.city }} {{ users.address }}</p>
+        <hr class="my-4">
+    </div>
+</div>
+<div class="container-fluid as_container_jumbo" >
+    <div class="row">
+        {% for ads in allads %}
+            <div class="jumbotron col-lg-3 as_jumbo">
+                <h3><strong class="as_strong"> Annonce N°{{ ads.id }}</strong></h3>
+                <p class="lead"><strong class="as_strong">Titre</strong> {{ ads.title }}</p>
+                <p class="lead"><strong class="as_strong">Bref description:</strong> {{ ads.brief_desc }}</p>
+                <p class="lead"><strong class="as_strong">Description:</strong> {{ ads.description }}</p>
+                <p class="lead"><strong class="as_strong">Secteur d'activité:</strong> {{ users.city }} {{ users.postcode }}</p>
+                <p class="lead"><strong class="as_strong">Date de création:</strong> {{ ads.date }}</p>
+                <a href="/Admin/archive/{{ ads.id }}" class="btn btn-outline-info as_a_archive"><i class="fas fa-archive"></i> Archiver</a>
+                <a href="/Admin/deleteAds/{{ ads.id }}" class="btn btn-outline-danger as_a_delete"><i class="fas fa-trash"></i> Supprimer</a>
+                <hr class="my-4">
+            </div>
+        {% endfor %}
+        </div>
+</div>
+<div class="container col-lg-10">
+    <div class="jumbotron as_jumbo">
+        <h2 class="display-4">Message...</h2>
+        {% for mess in allMess %}
+            <p class="lead"><strong class="as_strong">Contenue</strong> {{ mess.content }}</p>
+            <p class="lead"><strong class="as_strong">Date de création:</strong> {{ mess.date }}</p>
+            <hr class="my-4">
+        {% endfor %}
+    </div>
+</div>
+</div>
+</div>
+</div>
+{% endblock %}

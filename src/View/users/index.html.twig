@@ -1,0 +1,23 @@
+{% extends 'layout.html.twig' %}
+{% block title %}Utilisateur{% endblock %}
+
+{% block content %}
+    <h1 class="as_user_h1">Communauté</h1>
+    <div class="container as_container">
+        <div class="card-columns as_columns">
+            {% for users in allUsers %}
+                  <div class="card as_box">
+                    <div class="as_thumb">
+                        <img src="/assets/images/users/{{ users.image }}" class="card-img-top" alt="...">
+                    </div>
+                    <div class="card-body as_details">
+                        <div class="as_content">
+                            <p class="card-text"><small class="text-muted"><a href="/users/show/{{ users.id }}">Voir le profil <i class="far fa-address-card"></i></a></small></p>
+                            <h2 class="as_user_title"> {{ users.firstname }}  {{ users.lastname }} </h2>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}

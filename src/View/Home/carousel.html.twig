@@ -1,0 +1,43 @@
+{% extends 'layout.html.twig' %}
+{% block title %}Accueil{% endblock %}
+{% block content %}
+
+
+    <div class="container">
+        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+            <ol class="carousel-indicators mk-card">
+                <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="4"></li>
+            </ol>
+            <div class="carousel-inner mk-card">
+                {% for messages in last5Messages %}
+                {% if messages.id == 1 %}
+                <div class="carousel-item active">
+                    {% else %}
+                    <div class="carousel-item ">
+                        {% endif %}
+                        <div class="mk-carousel-container">
+                            <div class="mk-carousel-text">
+                                <h5 class="">{{ messages.firstname }} {{ messages.lastname }}</h5>
+                                <p class="">{{ messages.content }}</p>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+
+                </div>
+                <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                </a>
+            </div>
+        </div>
+    </div>
+{% endblock %}

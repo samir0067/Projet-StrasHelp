@@ -1,0 +1,42 @@
+<form class="vr-form-container as_form_user" method="post">
+    <input type="hidden" value="{{ sessionDetails.id }}" name="id">
+    <div class="vr-input">
+        <label for="title">Titre</label>
+        <input class="form-control as_thead" type="text" value="{{ adInfo.title }}" name="title" aria-describedby="titleHelp"
+               placeholder="Entrez un titre" required>
+    </div>
+
+    <div class="vr-input">
+        <label for="description">Description</label>
+        <textarea class="form-control as_thead" name="description"
+                  placeholder="Décrivez votre annonce en détails.">{{ adInfo.description }}</textarea>
+    </div>
+
+    <div class="vr-input">
+        <label for="categories_id">Catégorie</label>
+        <select class="form-control as_thead" name="categories_id" required>
+            <option value="">Choisissez une catégorie</option>
+            {% for category in categorie %}
+                <option value="{{ category.id }}">{{ category.name }}</option>
+            {% endfor %}
+        </select>
+    </div>
+
+
+    <div class="vr-input">
+        <label for="localisation_id">Département</label>
+        <select class="form-control as_thead" name="localisation_id" required>
+            <option value="">Choisissez un département</option>
+            {% for codePostal in postcode %}
+                <option value="{{ codePostal.id }}">{{ codePostal.postcode }}</option>
+            {% endfor %}
+        </select>
+    </div>
+
+
+    <div class="vr-input">
+        <input type="submit" class="vr-Add-Button btn btn-primary btn-lg" value="Valider">
+    </div>
+</form>
+
+

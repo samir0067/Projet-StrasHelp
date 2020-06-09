@@ -1,0 +1,343 @@
+/*##################### debut Virgile Rietsch ###################*/
+body {
+    --orangeNavbar: #f19444;
+    --grisApple: rgba(238, 240, 245, 1);
+}
+
+.vr-h1 {
+    margin-top: 20px;
+    text-align: center;
+    font-weight: bold;
+    color: black;
+    text-transform: uppercase;
+    font-family: 'Baloo Bhaina 2', cursive;
+    font-size: 2rem;
+    padding: 0px;
+}
+
+.vr-h1-guestbook {
+    margin-top: 20px;
+    text-align: center;
+    font-weight: bold;
+    color: #ead11b;
+    text-shadow: 1px 1px 1px black;
+    text-transform: uppercase;
+    font-family: 'Baloo Bhaina 2', cursive;
+    font-size: 2rem;
+    padding: 0px;
+}
+
+.vr-h2 {
+    margin-top: 20px;
+    text-align: center;
+    font-weight: initial;
+    color: black;
+    text-transform: uppercase;
+    font-family: 'Baloo Bhaina 2', cursive;
+    font-size: 1.5rem;
+    padding: 0px;
+}
+.vr-h2-guestbook {
+    margin-top: 20px;
+    text-align: center;
+    font-weight: initial;
+    color: white;
+    text-shadow: 1px 1px 1px black;
+    text-transform: uppercase;
+    font-family: 'Baloo Bhaina 2', cursive;
+    font-size: 1.5rem;
+    padding: 0px;
+}
+
+.vr-form-container {
+    width: 100%;
+    display: flex;
+    border-radius: 0px;
+    padding: 20px;
+    align-items: center;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+
+.vr-input {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin: 10px 0px 10px 0px;
+}
+
+.vr-input label, .vr-input textarea, .vr-input input {
+    width: 100%;
+}
+
+.vr-input textarea {
+    height: 300px;
+}
+
+.vr-button {
+    margin: 6px;
+    padding: 6px;
+    background-color: orange;
+    border: 2px solid #E0F2F1 !important;
+    transition: .25s all;
+}
+
+.vr-button:hover {
+    background-color: #096655;
+    border: 2px solid #E0F2F1 !important;
+    transition: .25s all;
+
+}
+
+
+.vr-form-container label {
+
+    color: black;
+    margin: 5px 0px 5px 0px;
+}
+
+.vr-form-container small {
+    color: greenyellow !important;
+}
+
+.vr-form-container input::placeholder, .vr-form-container textarea::placeholder {
+    color: rgba(0, 100, 240, 1);
+}
+
+.vr-Add-Button {
+    margin: 0px !important;
+    padding: 10px !important;
+    text-align: center;
+    font-size: 1.5rem;
+    text-decoration: none;
+
+    background-color: var(--orangeNavbar);
+    color: white;
+    border-radius: 0px !important;
+    border: 0px !important;
+
+    transition: ease .25s;
+    text-shadow: 1px 1px 1px black;
+}
+
+.vr-Add-Button:hover {
+    background-color: white;
+    color: #004D40;
+
+    text-shadow: 0px 0px 0px black;
+    transition: ease .25s;
+}
+
+
+.vr-filter label {
+    text-transform: uppercase;
+    color: white;
+    font-weight: bold;
+    font-size: 1.25rem;
+    text-shadow: 1px 1px 1px black;
+}
+
+.vr-filter {
+    text-align: center;
+}
+.vr-quotes{
+    color:white;
+    text-shadow: 1px 1px 1px black;
+    text-align: center;
+    font-family: 'Sacramento', cursive;
+    font-size: 2.5rem;
+}
+
+.vr-tables {
+    width: 100%;
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+
+.vr-ads-filter {
+    background-color: rgb(60, 146, 232);
+    padding: 10px;
+}
+
+.vr-tables tr:nth-child(odd) {
+    background-color: rgba(240, 240, 240, 1);
+!important;
+}
+
+.vr-tables tr:nth-child(even) {
+    background-color: rgb(220, 220, 220);
+!important;
+}
+
+.vr-tables tr:hover {
+    background-color: rgba(200, 200, 200, 1);
+!important;
+}
+
+.vr-tables th {
+    text-transform: uppercase !important;
+    background-color: rgba(100, 180, 255, 1);
+    color: white !important;
+    text-align: center !important;
+    border: 0px !important;
+    padding: 5px;
+    text-shadow: 1px 1px 1px black;
+}
+
+.vr-tables td {
+    color: black !important;
+    text-align: center !important;
+    /*text-shadow: 1px 1px 1px black;*/
+    border: 0px !important;
+    padding: 5px;
+
+    font-size: 1rem;
+}
+
+.vr-icon-archive, .vr-icon-edit {
+    color: white !important;
+    transition: ease-in-out .25s;
+    margin: 10px;
+    text-shadow: 1px 1px 1px black;
+
+    text-decoration: none;
+    padding: 5px;
+    border-radius: 4px;
+    border: 2px solid white;
+}
+
+.vr-icon-search, .vr-icon-search:hover {
+    font-size: 2rem;
+    color: #0091EA;
+}
+
+.vr-icon-edit {
+    color: white;
+    background-color: #0bb100;
+}
+
+.vr-icon-edit:hover {
+    background-color: rgba(0, 255, 0, 1);
+}
+
+.vr-icon-archive {
+    color: white;
+    background-color: rgba(200, 0, 30, 1);
+}
+
+.vr-icon-archive:hover {
+    background-color: red;
+}
+
+.vr-Add-Button-container {
+    padding: 0px;
+    margin:20px auto;
+}
+
+.vr-images {
+    width: 175px;
+    height: auto;
+}
+
+.vr-images-container {
+    overflow: hidden;
+    height: 100%;
+}
+
+
+.vr-rows {
+    display: flex;
+    flex-direction: column !important;
+    flex-wrap: wrap;
+    padding: 10px;
+}
+
+.vr-catname {
+    color: #004D40;
+    font-style: italic;
+}
+
+.vr-description {
+    color: #004D40;
+    line-height: 28px;
+
+}
+
+.vr-name {
+    color: #000;
+    font-weight: bolder;
+}
+
+.vr-contact {
+    background-color: #004D40;
+    border-radius: 40px;
+    padding: 40px;
+}
+
+.vr-navbar-search-button, .as_footer_button {
+    background-color: var(--orangeNavbar) !important;
+    border: 1px solid white !important;
+    color: white !important;
+    transition: ease-in-out .25s;
+    margin: 10px;
+    text-align: center;
+    text-shadow: 1px 1px 1px black;
+    width: 200px !important;
+}
+
+.vr-navbar-search-button:hover, .as_footer_button:hover {
+    background-color: white !important;
+    border: 1px solid #004D40 !important;
+    color: #004D40 !important;
+    transition: ease-in-out .25s;
+    text-shadow: 0px 0px 0px black;
+}
+
+.vr-ads {
+    margin-bottom: 20px;
+}
+
+.vr-search-results {
+    border-radius: 20px;
+    padding: 20px;
+    margin: 20px;
+    background-color:  rgba(60, 146, 232, 0.3);
+}
+
+
+#time {
+    color: rgba(140, 250, 140, 1) !important;
+}
+
+.vr-bg {
+    background-color: linear-gradient(var(--grisApple), white) ;
+    padding: 20px;
+}
+
+.vr-guestbook{
+    background: linear-gradient(45deg, rgb(92, 238, 82),rgba(238, 220, 41), rgba(213, 35, 35), #e02828);
+    /*background: #9cd4ea ;*/
+    background-size: 400% 400%;
+    animation: gradient 5s ease infinite;
+    padding: 20px;
+    height: 100%;
+}
+.vr-quotes-show{
+    padding:250px;
+}
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.vr-quotes-textarea{
+    font-family: 'Sacramento', cursive;
+    font-size: 2.5rem;
+}

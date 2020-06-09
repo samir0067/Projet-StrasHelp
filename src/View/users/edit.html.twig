@@ -1,0 +1,11 @@
+{% extends 'layout.html.twig' %}
+{% block title %}Modifier le profil{% endblock %}
+{% block content %}
+    <div class="container-fluid as_block_fluid">
+        <div class="container">
+            <h1>Modifier le profil de {{ users.firstname }} {{ users.lastname }}</h1>
+            {% include 'users/_forma.html.twig' %}
+        </div>
+    </div>
+{% endblock %}
+

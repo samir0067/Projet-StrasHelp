@@ -1,0 +1,7 @@
+{% extends 'layout.html.twig' %}
+
+{% block content %}
+    <h1>Edit message {{ guestBook.id }}</h1>
+    {% include 'GuestBook/_form.html.twig' %}
+    <a href="/GuestBook/show/{{ guestBook.id }}">Back</a>
+{% endblock %}

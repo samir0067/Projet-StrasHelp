@@ -1,0 +1,46 @@
+{% extends 'layout.html.twig' %}
+{% block title %}Super Admin{% endblock %}
+{% block content %}
+<div class="container-fluid as_block_fluid">
+<div class="container as_block">
+    <div class="row">
+    <div class="container-fluid as_add_block">
+        <a href="/Admin/add"><button type="button" class="btn btn-outline-success btn-block as_a_add">Ajouter</button></a>
+    </div>
+    <div class="container-fluid as_index">
+        <table class="as_table table table-borderless">
+            <thead class="thead as_thead">
+                <tr>
+                    <th class="as_th " style="width: 10%">image</th>
+                    <th class="as_th">Prénom</th>
+                    <th class="as_th">Nom</th>
+                    <th class="as_th" style="width: 10%">Email</th>
+                    <th class="as_th">Mobile</th>
+                    <th class="as_th">Outil</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for users in allUsers %}
+                <tr>
+                    <td class="as_td"><img src="/assets/images/users/{{ users.image }}" class="as_img_index"></td>
+                    <td class="as_td">{{ users.firstname }}</td>
+                    <td class="as_td">{{ users.lastname }}</td>
+                    <td class="as_td">{{users.email}}</td>
+                    <td class="as_td">{{users.phone}}</td>
+                    <td class="as_td as_td_btn">
+                        <a href="/Admin/view/{{ users.id }}" class="btn btn-outline-secondary as_a_view"><i
+                                    class="fas fa-street-view"></i> Profil</a>
+                        <a href="/Admin/modify/{{ users.id }}" class="btn btn-outline-primary as_a_modify"><i
+                                    class="fas fa-user-edit"></i> Modifier</a>
+                        <a href="/Admin/delete/{{ users.id }}" class="btn btn-outline-danger as_a_delete"><i
+                                    class="fas fa-trash"></i> Supprimer</a>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    </div>
+</div>
+</div>
+{% endblock %}

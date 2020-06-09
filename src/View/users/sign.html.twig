@@ -1,0 +1,37 @@
+{% extends 'layout.html.twig' %}
+
+
+
+{% block content %}
+    {% if session %}
+        <h2>If you see this message, it means the redirect function encountered a problem.</h2>
+    {% endif %}
+    <div class="container-fluid as_container_user">
+        <form class="needs-validation as_form_user" method="POST" action="">
+            <h1 class="as_h1">SE CONNECTER</h1>
+            <div class="form-row fdb as_div_input_user">
+                <div class="col-md-7 as_inputBox_user">
+                    <label class="as_label_user" for="email">Email</label>
+                    <input type="email" class="form-control as_input_user" name="emailLog" placeholder="Votre Email" required>
+                    <div class="valid-feedback">Ok !</div>
+                    <div class="invalid-feedback">Valeur incorrecte</div>
+                </div>
+            </div>
+            <div class="form-row fdb as_div_input_user">
+                <div class="col-md-7 as_inputBox_user">
+                    <label class="as_label_user" for="password">Mot de Passe</label>
+                    <input type="password" class="form-control as_input_user" name="passwordLog" placeholder="Votre mot de passe"
+                           required>
+                    <div class="valid-feedback">Ok !</div>
+                    <div class="invalid-feedback">Valeur incorrecte</div>
+                </div>
+            </div>
+            <div class="maximaxi as_inputBox_user">
+                <button class="btn as_input_user_submit" type="submit" value="Je me connecte !">Je me connecte !</button>
+            </div>
+            <p class="forget">Mot de passe oublié ? <a href="#">Cliquez ici</a></p>
+        </form>
+    </div>
+    <br>
+    <br>
+{% endblock %}

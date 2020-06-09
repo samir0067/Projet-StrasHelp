@@ -1,0 +1,15 @@
+<form method="post">
+    <div class="form-group">
+        <label for="exampleFormControlInput1">Nom</label>
+        <input type="text" class="form-control" value="{{ guestbook.users_id }}" name="name">
+    </div>
+
+    <div class="form-group">
+        <label for="exampleFormControlTextarea1">Votre message</label>
+        <textarea class="form-control" value="{{ guestbook.content }}" name="content" id="exampleFormControlTextarea1" rows="3"></textarea>
+    </div>
+
+    <div class="form-group">
+        <input type="submit" name="Envoyer" class="form-control" value="Ajouter">
+    </div>
+</form>

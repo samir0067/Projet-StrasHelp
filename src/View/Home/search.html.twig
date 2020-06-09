@@ -1,0 +1,29 @@
+{% extends 'layout.html.twig' %}
+{% block title %}Accueil{% endblock %}
+
+{% block content %}
+    {% if not query  %}
+        {% set query="" %}
+    {% endif %}
+    <div class="container-fluid vr-bg">
+    <div class="container">
+        <h3 style="font-style: italic">Suggestions pour la recherche "{{ query }}" ( {{ ads|length }} résultats )</h3>
+
+
+        {% for ad in ads  %}
+            <div class="row">
+                <div class="col vr-search-results">
+                    <h5 class="vr-h2">{{ ad.title  }}</h5>
+                    <p class="vr-catname">Catégorie : {{ ad.category_name }} dans le {{ ad.postcode }}</p>
+                    <p>{{ ad.description[:200] }} ...</p>
+                    <a class="btn btn-outline-success vr-navbar-search-button" href="/ads/show/{{ ad.ad_id  }}">Consulter cette annonce</a>
+                    <a></a>
+                </div>
+            </div>
+        {% endfor %}
+
+
+    </div>
+    </div>
+
+{% endblock %}
