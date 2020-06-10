@@ -1,9 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Baloo+Bhaina+2&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Sacramento&display=swap');
-@import 'virgile.css';
-@import 'max.css';
-@import 'users.css';
-@import 'samir.css';
+@import 'style1.css';
+@import 'style2.css';
+@import 'style3.css';
+@import 'style4.css';
 /*##################### début Général #############################*/
 * {
     box-sizing: border-box;
@@ -87,17 +87,17 @@ a, h1, label, input, textarea, table, .mk2-h2, h2, h3, h4, h5 {
 .footer_item,
 .footer_foot {
     padding: 0;
-    border: 0px;
+    border: 0;
 }
 
 .footer_body {
     padding: 7px 0 0 0;
-    border: 0px;
+    border: 0;
 }
 
 .footer_row {
     margin-right: 0;
     margin-left: 0;
-    border: 0px;
+    border: 0;
 }
 
